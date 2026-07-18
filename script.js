@@ -192,6 +192,7 @@
   const $ = (s, c) => (c || document).querySelector(s);
   const $$ = (s, c) => Array.from((c || document).querySelectorAll(s));
   let lang = "ckb";
+  const LANG_LABELS = { ckb: "کوردی", ar: "عربي", en: "English" };
 
   /* ---------- i18n apply ---------- */
   function applyLang(l) {
@@ -211,8 +212,11 @@
       if (dict[k] != null) el.setAttribute("placeholder", dict[k]);
     });
 
-    $$("#langSwitch button, #drawerLang button").forEach(b =>
+    $$("#langMenu button, #drawerLang button").forEach(b =>
       b.classList.toggle("active", b.dataset.lang === l));
+
+    const label = $("#langCurrentLabel");
+    if (label) label.textContent = LANG_LABELS[l] || l;
 
     const sub = $("#authSubmit");
     if (sub) sub.innerHTML = dict[activeTab === "signup" ? "m_signup" : "m_login"];
@@ -255,9 +259,32 @@
   drawer && drawer.addEventListener("click", e => { if (e.target === drawer) closeDrawer(); });
   $$("#drawer .drawer-links a").forEach(a => a.addEventListener("click", closeDrawer));
 
-  /* ---------- language buttons ---------- */
-  $$("#langSwitch button, #drawerLang button").forEach(b =>
-    b.addEventListener("click", () => { applyLang(b.dataset.lang); toast(tr("t_lang")); }));
+  /* ---------- language dropdown ---------- */
+  const langSwitch = $("#langSwitch");
+  const langMenu = $("#langMenu");
+  const langCurrent = $("#langCurrent");
+  const openLang = () => {
+    if (!langMenu) return;
+    langMenu.hidden = false;
+    langSwitch.classList.add("open");
+    if (langCurrent) langCurrent.setAttribute("aria-expanded", "true");
+  };
+  const closeLang = () => {
+    if (!langMenu) return;
+    langMenu.hidden = true;
+    langSwitch.classList.remove("open");
+    if (langCurrent) langCurrent.setAttribute("aria-expanded", "false");
+  };
+  langCurrent && langCurrent.addEventListener("click", e => {
+    e.stopPropagation();
+    langMenu && langMenu.hidden ? openLang() : closeLang();
+  });
+  document.addEventListener("click", e => {
+    if (langSwitch && !langSwitch.contains(e.target)) closeLang();
+  });
+
+  $$("#langMenu button, #drawerLang button").forEach(b =>
+    b.addEventListener("click", () => { applyLang(b.dataset.lang); closeLang(); toast(tr("t_lang")); }));
 
   /* ---------- favorites ---------- */
   $$(".car-fav").forEach(btn => btn.addEventListener("click", e => {
@@ -375,6 +402,6 @@
   setChipCounts();
   onScroll();
   document.addEventListener("keydown", e => {
-    if (e.key === "Escape") { closeModal(); closeDrawer(); if (notif) notif.hidden = true; }
+    if (e.key === "Escape") { closeModal(); closeDrawer(); closeLang(); if (notif) notif.hidden = true; }
   });
 })();

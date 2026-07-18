@@ -1,1 +1,611 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050608">
+<title>MONACO CARS — موناکۆ کارز | ئۆتۆمبێلی لوکس لە هەولێر</title>
+<meta name="description" content="مۆناکۆ کارز — ناوەندی ئۆتۆمبێلی لوکس لە سۆران، هەولێر. کوالیتی نایاب، متمانە، و خزمەتگوزاری تایبەت.">
 
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/hama-tech2/monaco-cars-erbil/main/favicon%20monaco.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=Cairo:wght@300;400;600;700;800&family=Noto+Kufi+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ambient glow layers -->
+<div class="bg-ambient" aria-hidden="true"></div>
+
+<!-- ============ NAVBAR ============ -->
+<header class="nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="#home" class="brand" aria-label="Monaco Cars">
+      <img src="https://raw.githubusercontent.com/hama-tech2/monaco-cars-erbil/main/monack%20logo.jpg" alt="Monaco Cars" class="brand-logo">
+      <span class="brand-text"><b>MONACO</b><i>CARS</i></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="active" data-i18n="nav_home">ماڵەوە</a>
+      <a href="#cars" data-i18n="nav_cars">ئۆتۆمبێلەکان</a>
+      <a href="#services" data-i18n="nav_services">خزمەتگوزارییەکان</a>
+      <a href="#about" data-i18n="nav_about">دەربارە</a>
+      <a href="#contact" data-i18n="nav_contact">پەیوەندی</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="lang-switch" id="langSwitch" role="tablist" aria-label="Language">
+        <button data-lang="ckb" class="active">کوردی</button>
+        <button data-lang="ar">عربي</button>
+        <button data-lang="en">EN</button>
+      </div>
+
+      <button class="icon-btn" id="notifBtn" aria-label="Notifications">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+        <span class="badge" id="notifBadge">3</span>
+      </button>
+
+      <button class="icon-btn" id="accountBtn" aria-label="Account">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+      </button>
+
+      <button class="btn-login" id="loginBtn" data-i18n="login">چوونەژوورەوە</button>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-media">
+    <video class="hero-video" autoplay muted loop playsinline poster="hero-poster.jpg">
+      <source src="https://raw.githubusercontent.com/hama-tech2/monaco-cars-erbil/main/herobackground-video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-scrim"></div>
+  </div>
+
+  <div class="hero-content reveal">
+    <span class="eyebrow" data-i18n="hero_eyebrow">لێخوڕینی نایاب</span>
+    <h1 class="hero-title"><span data-i18n="hero_title_1">MONACO</span> <em data-i18n="hero_title_2">CARS</em></h1>
+    <p class="hero-sub" data-i18n="hero_sub">ئۆتۆمبێلی لوکس. خزمەتگوزاری نایاب. گەشتەکەت، بەرزتر.</p>
+    <div class="hero-cta">
+      <a href="#cars" class="btn-primary">
+        <span data-i18n="hero_btn_cars">بینینی ئۆتۆمبێلەکان</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#contact" class="btn-ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <span data-i18n="hero_btn_loc">شوێنەکەمان</span>
+      </a>
+    </div>
+
+    <div class="hero-scroll">
+      <span data-i18n="hero_scroll">بۆ خوارەوە بگەڕێ</span>
+      <span class="scroll-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
+    </div>
+  </div>
+
+  <aside class="hero-stats reveal">
+    <div class="stat-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13l2-5a2 2 0 0 1 2-1.3h10A2 2 0 0 1 19 8l2 5v5h-3v-2H6v2H3z"/><circle cx="7.5" cy="15.5" r="1.3"/><circle cx="16.5" cy="15.5" r="1.3"/></svg>
+      <div><strong>150+</strong><span data-i18n="stat_vehicles">ئۆتۆمبێلی لوکس</span></div>
+    </div>
+    <div class="stat-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.4 5 5.6.8-4 4 1 5.6L12 20l-5 2.4 1-5.6-4-4 5.6-.8z"/></svg>
+      <div><strong>10+</strong><span data-i18n="stat_years">ساڵ شارەزایی</span></div>
+    </div>
+    <div class="stat-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c0-3.4 3-5.2 6.5-5.2s6.5 1.8 6.5 5.2"/><path d="M17 5.2A3.2 3.2 0 0 1 17 11M21.5 20c0-2.4-1.4-4-3.6-4.7"/></svg>
+      <div><strong>5K+</strong><span data-i18n="stat_clients">کڕیاری دڵخۆش</span></div>
+    </div>
+  </aside>
+
+  <div class="hero-features reveal">
+    <div class="feat">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+      <div><h4 data-i18n="feat1_t">کوالیتی نایاب</h4><p data-i18n="feat1_d">ئۆتۆمبێلی لوکسی هەڵبژێردراو بۆ تۆ.</p></div>
+    </div>
+    <div class="feat">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12a8 8 0 0 1 16 0v4a2 2 0 0 1-2 2h-1v-6h3M7 18H6a2 2 0 0 1-2-2v-4h3z"/></svg>
+      <div><h4 data-i18n="feat2_t">پشتگیری ٢٤/٧</h4><p data-i18n="feat2_d">تیمەکەمان هەمیشە ئامادەیە بۆ یارمەتیت.</p></div>
+    </div>
+    <div class="feat">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg>
+      <div><h4 data-i18n="feat3_t">دارایی نەرم</h4><p data-i18n="feat3_d">هەڵبژاردەی پارەدانی گونجاو بۆ پێداویستیت.</p></div>
+    </div>
+    <div class="feat">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 6 6 .5-4.5 4 1.5 6.5L12 16l-6 3 1.5-6.5L3 8.5 9 8z"/></svg>
+      <div><h4 data-i18n="feat4_t">ئەزموونی تایبەت</h4><p data-i18n="feat4_d">خزمەتگوزاری لوکس، تایبەت بۆ تۆ.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CARS ============ -->
+<section class="cars" id="cars">
+  <div class="section-head">
+    <span class="eyebrow" data-i18n="cars_eyebrow">کۆکراوەکەمان</span>
+    <h2 class="section-title" data-i18n="cars_title">ئۆتۆمبێلە <em>لوکسەکان</em></h2>
+    <p class="section-sub" data-i18n="cars_sub">هەڵبژاردەیەکی تایبەت لە باشترین ئۆتۆمبێلەکان، شوێنێک کە کوالیتی و شکۆمەندی یەکدەگرن.</p>
+  </div>
+
+  <div class="cars-toolbar">
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+      <input type="text" id="carSearch" placeholder="گەڕان بۆ ئۆتۆمبێل..." data-i18n-ph="cars_search_ph">
+    </div>
+    <div class="filter-chips" id="filterChips" role="tablist">
+      <button class="chip active" data-cat="all"><span data-i18n="cat_all">هەموو</span> <em class="chip-count">6</em></button>
+      <button class="chip" data-cat="suv"><span data-i18n="cat_suv">SUV</span> <em class="chip-count">3</em></button>
+      <button class="chip" data-cat="sedan"><span data-i18n="cat_sedan">سیدان</span> <em class="chip-count">1</em></button>
+      <button class="chip" data-cat="pickup"><span data-i18n="cat_pickup">پیکاپ</span> <em class="chip-count">1</em></button>
+      <button class="chip" data-cat="luxury"><span data-i18n="cat_luxury">لوکس</span> <em class="chip-count">1</em></button>
+    </div>
+  </div>
+
+  <div class="cars-grid" id="carsGrid">
+
+    <!-- Card 1 — white Land Cruiser (featured) -->
+    <article class="car-card" data-cat="suv luxury" data-name="Toyota Land Cruiser VXR">
+      <div class="car-media">
+        <img src="hero-poster.jpg" alt="Toyota Land Cruiser">
+        <span class="car-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/></svg> 8</span>
+        <span class="car-tag" data-i18n="tag_featured">تایبەت</span>
+        <button class="car-fav" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-5.6-7-11a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.4-7 11-7 11z"/></svg></button>
+        <button class="car-share" aria-label="Share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M8 11l8-4M8 13l8 4"/></svg></button>
+      </div>
+      <div class="car-body">
+        <div class="car-row"><h3>Toyota Land Cruiser VXR</h3><span class="car-price">$78,000</span></div>
+        <span class="car-year">2021</span>
+        <div class="car-specs">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 9h14v7H5z"/><path d="M8 9V6h8v3"/></svg> 5.7L V8</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 42,000 km</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 4v16M18 4v16M6 9h12"/></svg> <em data-i18n="spec_auto">ئۆتۆماتیک</em></span>
+        </div>
+        <p class="car-desc" data-i18n="car1_desc">لووتکەی لوکس و بەهێزی — ئامادە بۆ هەموو ڕێگایەک.</p>
+        <div class="car-foot">
+          <a href="#contact" class="btn-detail"><span data-i18n="view_details">بینینی وردەکاری</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 6l6 6-6 6"/></svg></a>
+          <a href="https://share.google/rqsRNPrfsMypXHFyL" target="_blank" rel="noopener" class="car-source">Source: iQ Cars</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 2 — black Land Cruiser 300 -->
+    <article class="car-card" data-cat="suv" data-name="Toyota Land Cruiser 300">
+      <div class="car-media">
+        <img src="https://raw.githubusercontent.com/hama-tech2/monaco-cars-erbil/main/service%20car.jpg" alt="Toyota Land Cruiser 300">
+        <span class="car-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/></svg> 12</span>
+        <button class="car-fav" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-5.6-7-11a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.4-7 11-7 11z"/></svg></button>
+        <button class="car-share" aria-label="Share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M8 11l8-4M8 13l8 4"/></svg></button>
+      </div>
+      <div class="car-body">
+        <div class="car-row"><h3>Toyota Land Cruiser 300</h3><span class="car-price">$132,000</span></div>
+        <span class="car-year">2023</span>
+        <div class="car-specs">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 9h14v7H5z"/><path d="M8 9V6h8v3"/></svg> 3.5L V6</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 18,500 km</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 4v16M18 4v16M6 9h12"/></svg> <em data-i18n="spec_auto">ئۆتۆماتیک</em></span>
+        </div>
+        <p class="car-desc" data-i18n="car2_desc">نەوەی نوێ — هێز و شکۆ لە یەک ئۆتۆمبێلدا.</p>
+        <div class="car-foot">
+          <a href="#contact" class="btn-detail"><span data-i18n="view_details">بینینی وردەکاری</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 6l6 6-6 6"/></svg></a>
+          <a href="https://share.google/rqsRNPrfsMypXHFyL" target="_blank" rel="noopener" class="car-source">Source: iQ Cars</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 3 — black Land Cruiser 300 (trim 2) -->
+    <article class="car-card" data-cat="suv luxury" data-name="Land Cruiser 300 GR-S">
+      <div class="car-media">
+        <img src="https://raw.githubusercontent.com/hama-tech2/monaco-cars-erbil/main/service%20car2.jpg" alt="Land Cruiser 300 GR-S">
+        <span class="car-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/></svg> 10</span>
+        <button class="car-fav" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-5.6-7-11a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.4-7 11-7 11z"/></svg></button>
+        <button class="car-share" aria-label="Share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M8 11l8-4M8 13l8 4"/></svg></button>
+      </div>
+      <div class="car-body">
+        <div class="car-row"><h3>Land Cruiser 300 GR-S</h3><span class="car-price">$146,000</span></div>
+        <span class="car-year">2023</span>
+        <div class="car-specs">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 9h14v7H5z"/><path d="M8 9V6h8v3"/></svg> 3.5L V6</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 9,200 km</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 4v16M18 4v16M6 9h12"/></svg> <em data-i18n="spec_auto">ئۆتۆماتیک</em></span>
+        </div>
+        <p class="car-desc" data-i18n="car3_desc">ڤێرژنی وەرزشی GR — بۆ ئەوانەی زیاتر دەخوازن.</p>
+        <div class="car-foot">
+          <a href="#contact" class="btn-detail"><span data-i18n="view_details">بینینی وردەکاری</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 6l6 6-6 6"/></svg></a>
+          <a href="https://share.google/rqsRNPrfsMypXHFyL" target="_blank" rel="noopener" class="car-source">Source: iQ Cars</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 4 — white Hilux -->
+    <article class="car-card" data-cat="pickup" data-name="Toyota Hilux">
+      <div class="car-media">
+        <img src="https://raw.githubusercontent.com/hama-tech2/monaco-cars-erbil/main/service%20car3.jpg" alt="Toyota Hilux">
+        <span class="car-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/></svg> 9</span>
+        <button class="car-fav" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-5.6-7-11a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.4-7 11-7 11z"/></svg></button>
+        <button class="car-share" aria-label="Share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M8 11l8-4M8 13l8 4"/></svg></button>
+      </div>
+      <div class="car-body">
+        <div class="car-row"><h3>Toyota Hilux</h3><span class="car-price">$34,500</span></div>
+        <span class="car-year">2024</span>
+        <div class="car-specs">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 9h14v7H5z"/><path d="M8 9V6h8v3"/></svg> 2.8L Diesel</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 5,000 km</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 4v16M18 4v16M6 9h12"/></svg> <em data-i18n="spec_auto">ئۆتۆماتیک</em></span>
+        </div>
+        <p class="car-desc" data-i18n="car4_desc">بەهێز و متمانەپێکراو — بۆ کار و ماندووبوون.</p>
+        <div class="car-foot">
+          <a href="#contact" class="btn-detail"><span data-i18n="view_details">بینینی وردەکاری</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 6l6 6-6 6"/></svg></a>
+          <a href="https://share.google/rqsRNPrfsMypXHFyL" target="_blank" rel="noopener" class="car-source">Source: iQ Cars</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 5 — black Camry -->
+    <article class="car-card" data-cat="sedan" data-name="Toyota Camry">
+      <div class="car-media">
+        <img src="https://raw.githubusercontent.com/hama-tech2/monaco-cars-erbil/main/service%20car4.jpg" alt="Toyota Camry">
+        <span class="car-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/></svg> 11</span>
+        <button class="car-fav" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-5.6-7-11a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.4-7 11-7 11z"/></svg></button>
+        <button class="car-share" aria-label="Share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M8 11l8-4M8 13l8 4"/></svg></button>
+      </div>
+      <div class="car-body">
+        <div class="car-row"><h3>Toyota Camry</h3><span class="car-price">$37,900</span></div>
+        <span class="car-year">2025</span>
+        <div class="car-specs">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 9h14v7H5z"/><path d="M8 9V6h8v3"/></svg> 2.5L Hybrid</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 2,300 km</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 4v16M18 4v16M6 9h12"/></svg> <em data-i18n="spec_auto">ئۆتۆماتیک</em></span>
+        </div>
+        <p class="car-desc" data-i18n="car5_desc">شێوازی نوێ و سووتەمەنیی کەم — سیدانی هۆشمەند.</p>
+        <div class="car-foot">
+          <a href="#contact" class="btn-detail"><span data-i18n="view_details">بینینی وردەکاری</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 6l6 6-6 6"/></svg></a>
+          <a href="https://share.google/rqsRNPrfsMypXHFyL" target="_blank" rel="noopener" class="car-source">Source: iQ Cars</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 6 — white Land Cruiser (second unit) -->
+    <article class="car-card" data-cat="suv" data-name="Land Cruiser VXR Pearl">
+      <div class="car-media">
+        <img src="hero-poster.jpg" alt="Land Cruiser VXR Pearl">
+        <span class="car-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/></svg> 7</span>
+        <button class="car-fav" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-5.6-7-11a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.4-7 11-7 11z"/></svg></button>
+        <button class="car-share" aria-label="Share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M8 11l8-4M8 13l8 4"/></svg></button>
+      </div>
+      <div class="car-body">
+        <div class="car-row"><h3>Land Cruiser VXR Pearl</h3><span class="car-price">$82,500</span></div>
+        <span class="car-year">2021</span>
+        <div class="car-specs">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 9h14v7H5z"/><path d="M8 9V6h8v3"/></svg> 5.7L V8</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 36,800 km</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 4v16M18 4v16M6 9h12"/></svg> <em data-i18n="spec_auto">ئۆتۆماتیک</em></span>
+        </div>
+        <p class="car-desc" data-i18n="car6_desc">ڕەنگی پێرڵی سپی — پاک و ئامادەی گەشت.</p>
+        <div class="car-foot">
+          <a href="#contact" class="btn-detail"><span data-i18n="view_details">بینینی وردەکاری</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 6l6 6-6 6"/></svg></a>
+          <a href="https://share.google/rqsRNPrfsMypXHFyL" target="_blank" rel="noopener" class="car-source">Source: iQ Cars</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="cars-empty" id="carsEmpty" hidden>
+    <p data-i18n="cars_empty">هیچ ئۆتۆمبێلێک نەدۆزرایەوە. جۆرێکی تر تاقی بکەرەوە.</p>
+  </div>
+
+  <div class="cars-cta">
+    <div>
+      <strong data-i18n="cars_cta_t">ئەوەی دەتەوێت نەتدۆزییەوە؟</strong>
+      <span data-i18n="cars_cta_d">پەیوەندیمان پێوە بکە، یارمەتیت دەدەین ئۆتۆمبێلی خەونەکانت بدۆزیتەوە.</span>
+    </div>
+    <a href="#contact" class="btn-primary sm"><span data-i18n="cars_cta_btn">پەیوەندی بە پسپۆڕەکانمان</span></a>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="section-head center">
+    <span class="eyebrow" data-i18n="serv_eyebrow">خزمەتگوزارییەکانمان</span>
+    <h2 class="section-title" data-i18n="serv_title">لە <em>کڕینەوە</em> تا خزمەتگوزاری</h2>
+    <p class="section-sub" data-i18n="serv_sub">هەموو ئەوەی پێویستتە لە یەک شوێندا — بە متمانە و کوالیتی.</p>
+  </div>
+
+  <div class="serv-grid">
+    <article class="serv-card">
+      <div class="serv-img"><img src="https://raw.githubusercontent.com/hama-tech2/monaco-cars-erbil/main/service%20car.jpg" alt=""></div>
+      <div class="serv-txt">
+        <h3 data-i18n="serv1_t">فرۆشتنی ئۆتۆمبێل</h3>
+        <p data-i18n="serv1_d">هەڵبژاردەیەکی فراوان لە باشترین ئۆتۆمبێلە لوکسەکان.</p>
+      </div>
+    </article>
+    <article class="serv-card">
+      <div class="serv-img"><img src="https://raw.githubusercontent.com/hama-tech2/monaco-cars-erbil/main/service%20car2.jpg" alt=""></div>
+      <div class="serv-txt">
+        <h3 data-i18n="serv2_t">چاککردنەوەی نایاب</h3>
+        <p data-i18n="serv2_d">پارێزگاری و چاککردنەوە بە دەستی پسپۆڕ.</p>
+      </div>
+    </article>
+    <article class="serv-card">
+      <div class="serv-img"><img src="https://raw.githubusercontent.com/hama-tech2/monaco-cars-erbil/main/service%20car3.jpg" alt=""></div>
+      <div class="serv-txt">
+        <h3 data-i18n="serv3_t">خاوێنکردنەوە و پاراستن</h3>
+        <p data-i18n="serv3_d">وردەکاری و ڕازاندنەوەی ئۆتۆمبێل بۆ ڕووخسارێکی نوێ.</p>
+      </div>
+    </article>
+    <article class="serv-card">
+      <div class="serv-img"><img src="https://raw.githubusercontent.com/hama-tech2/monaco-cars-erbil/main/service%20car4.jpg" alt=""></div>
+      <div class="serv-txt">
+        <h3 data-i18n="serv4_t">دارایی و قیست</h3>
+        <p data-i18n="serv4_d">پلانی پارەدانی گونجاو بۆ هەموو بودجەیەک.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ ABOUT / WHY US ============ -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-media reveal">
+      <img src="https://raw.githubusercontent.com/hama-tech2/monaco-cars-erbil/main/about%20monaco.png" alt="Monaco Cars Showroom">
+      <div class="about-media-tag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        <div><strong data-i18n="about_tag_t">لوکس. کارایی. متمانە.</strong><span data-i18n="about_tag_d">زیاتر لە فرۆشگا — پابەندبوون بە نایابی.</span></div>
+      </div>
+    </div>
+
+    <div class="about-body reveal">
+      <span class="eyebrow" data-i18n="about_eyebrow">دەربارەی مۆناکۆ کارز</span>
+      <h2 class="section-title" data-i18n="about_title">هاندراو بە خولیا. <em>ناسراو بە نایابی.</em></h2>
+      <p class="about-lead" data-i18n="about_lead">لە مۆناکۆ کارز، باوەڕمان وایە ئۆتۆمبێل زیاتر لە ئامێرێکە — نیشانەی ئاواتخوازی، دەستڕەنگینی و کەسایەتییە. لە ڕۆژی یەکەمەوە، ئامانجمان دابینکردنی ئەزموونێکی بێهاوتای ئۆتۆمبێلە کە لەسەر متمانە و کوالیتی بنیات نراوە.</p>
+
+      <div class="about-stats">
+        <div><strong>250+</strong><span data-i18n="about_s1">ئۆتۆمبێلی لوکس</span></div>
+        <div><strong>15+</strong><span data-i18n="about_s2">ساڵ نایابی</span></div>
+        <div><strong>5K+</strong><span data-i18n="about_s3">کڕیاری دڵخۆش</span></div>
+        <div><strong>100%</strong><span data-i18n="about_s4">پابەندی کوالیتی</span></div>
+      </div>
+
+      <div class="about-cards">
+        <div class="ac">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 6 6 .5-4.5 4 1.5 6.5L12 16l-6 3 1.5-6.5L3 8.5 9 8z"/></svg>
+          <div><h4 data-i18n="ac1_t">هەڵبژاردەی نایاب</h4><p data-i18n="ac1_d">هەموو ئۆتۆمبێلێک بە وردی هەڵدەبژێردرێت.</p></div>
+        </div>
+        <div class="ac">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12a8 8 0 0 1 16 0v4a2 2 0 0 1-2 2h-1v-6h3M7 18H6a2 2 0 0 1-2-2v-4h3z"/></svg>
+          <div><h4 data-i18n="ac2_t">خزمەتگوزاری بێهاوتا</h4><p data-i18n="ac2_d">لە ڕاوێژکاری تا گەیاندن، لەگەڵتداین.</p></div>
+        </div>
+        <div class="ac">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <div><h4 data-i18n="ac3_t">متمانە و ڕوونی</h4><p data-i18n="ac3_d">ڕاستگۆیی و پەیوەندیی درێژخایەن لەگەڵ کڕیار.</p></div>
+        </div>
+        <div class="ac">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.4 5 5.6.8-4 4 1 5.6L12 20l-5 2.4 1-5.6-4-4 5.6-.8z"/></svg>
+          <div><h4 data-i18n="ac4_t">نایابی لە وردەکاریدا</h4><p data-i18n="ac4_d">نایابی بەڵێن نییە — ستانداردمانە.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="section-head">
+    <span class="eyebrow" data-i18n="contact_eyebrow">پەیوەندیمان پێوە بکە</span>
+    <h2 class="section-title" data-i18n="contact_title">ئێمە لێرەین بۆ <em>یارمەتیت</em></h2>
+    <p class="section-sub" data-i18n="contact_sub">پرسیارت هەیە یان ئامادەیت ئۆتۆمبێلی خەونەکانت بدۆزیتەوە؟ تیمەکەمان ئامادەیە.</p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-map">
+      <iframe src="https://www.google.com/maps?q=Monaco%20Cars%20Soran%20Erbil&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Monaco Cars Location"></iframe>
+      <div class="map-card">
+        <img src="https://raw.githubusercontent.com/hama-tech2/monaco-cars-erbil/main/location%20monaco.jpeg" alt="Monaco Cars Showroom">
+        <div>
+          <strong data-i18n="map_name">مۆناکۆ کارز — شۆرووم</strong>
+          <a href="https://maps.app.goo.gl/gJh4PAYa92ZQXjao8" target="_blank" rel="noopener" class="map-dir"><span data-i18n="map_dir">ڕێنمایی</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-info">
+      <span class="eyebrow" data-i18n="contact_loc_eyebrow">شوێنەکەمان</span>
+      <h3 data-i18n="contact_loc_title">سەردانی مۆناکۆ کارز بکە</h3>
+      <p class="contact-lead" data-i18n="contact_loc_lead">ئەزموونی لوکس لە شۆرووم — لێرەین بۆ دۆزینەوەی ئۆتۆمبێلی گونجاوت.</p>
+
+      <div class="social-row">
+        <a href="https://wa.me/9647504476599" target="_blank" rel="noopener" class="soc wa" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2s-.8.9-.9 1.1c-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.6-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5s-.7-1.7-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.4z"/><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8L7 20.5A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20z"/></svg>
+          <span>WhatsApp</span>
+        </a>
+        <a href="https://www.facebook.com/share/1Jncyxv14W/" target="_blank" rel="noopener" class="soc fb" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.5l.5-3H13v-2c0-.6.4-1 1-1z"/></svg>
+          <span>Facebook</span>
+        </a>
+        <a href="https://www.tiktok.com/@monacocars001" target="_blank" rel="noopener" class="soc tt" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2 1.6 3.6 3.5 4v3c-1.4 0-2.7-.4-3.9-1.1V15a6 6 0 1 1-6-6c.3 0 .7 0 1 .1v3.1c-.3-.1-.7-.2-1-.2a3 3 0 1 0 3 3V3z"/></svg>
+          <span>TikTok</span>
+        </a>
+      </div>
+
+      <ul class="info-list">
+        <li>
+          <span class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v2.6a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 3.2 2 2 0 0 1 4 1h2.6a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L7.6 9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+          <div class="info-txt">
+            <b data-i18n="info_phone">تەلەفۆن</b>
+            <a href="tel:+9647504476599" dir="ltr">0750 447 6599</a>
+            <a href="tel:+9647502021100" dir="ltr">0750 202 1100</a>
+            <a href="tel:+9647766221100" dir="ltr">0776 622 1100</a>
+          </div>
+        </li>
+        <li>
+          <span class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <div class="info-txt">
+            <b data-i18n="info_addr">ناونیشان</b>
+            <span data-i18n="info_addr_v">سۆران، هەولێر، هەرێمی کوردستان، عێراق</span>
+          </div>
+        </li>
+        <li>
+          <span class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div class="info-txt">
+            <b data-i18n="info_hours">کاتەکانی کار</b>
+            <span data-i18n="info_hours_v1">شەممە – پێنجشەممە: ٩:٠٠ بەیانی – ٨:٠٠ ئێوارە</span>
+            <span data-i18n="info_hours_v2">هەینی: ٢:٠٠ – ٨:٠٠ ئێوارە</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="assist-bar">
+    <div class="assist-l">
+      <span class="assist-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12a8 8 0 0 1 16 0v4a2 2 0 0 1-2 2h-1v-6h3M7 18H6a2 2 0 0 1-2-2v-4h3z"/></svg></span>
+      <div><strong data-i18n="assist_t">پێویستت بە یارمەتی کەسی هەیە؟</strong><span data-i18n="assist_d">پسپۆڕەکانمان ئامادەن ئۆتۆمبێلی گونجاوت بۆ بدۆزنەوە.</span></div>
+    </div>
+    <a href="https://wa.me/9647504476599" target="_blank" rel="noopener" class="btn-primary sm"><span data-i18n="assist_btn">پەیوەندی بە پسپۆڕەکانمان</span></a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <a href="#home" class="brand">
+        <img src="https://raw.githubusercontent.com/hama-tech2/monaco-cars-erbil/main/monack%20logo.jpg" alt="Monaco Cars" class="brand-logo">
+        <span class="brand-text"><b>MONACO</b><i>CARS</i></span>
+      </a>
+      <p data-i18n="foot_about">مۆناکۆ کارز — ناوەندی تۆ بۆ باشترین ئۆتۆمبێلە لوکسەکان. نایابی، متمانە و کارایی — لە هەموو کیلۆمەترێکدا.</p>
+      <div class="foot-soc">
+        <a href="https://www.facebook.com/share/1Jncyxv14W/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.5l.5-3H13v-2c0-.6.4-1 1-1z"/></svg></a>
+        <a href="https://www.tiktok.com/@monacocars001" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2 1.6 3.6 3.5 4v3c-1.4 0-2.7-.4-3.9-1.1V15a6 6 0 1 1-6-6c.3 0 .7 0 1 .1v3.1c-.3-.1-.7-.2-1-.2a3 3 0 1 0 3 3V3z"/></svg></a>
+        <a href="https://wa.me/9647504476599" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8L7 20.5A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20z"/></svg></a>
+      </div>
+    </div>
+
+    <div class="foot-col">
+      <h5 data-i18n="foot_links">بەستەرەکان</h5>
+      <a href="#home" data-i18n="nav_home">ماڵەوە</a>
+      <a href="#cars" data-i18n="nav_cars">ئۆتۆمبێلەکان</a>
+      <a href="#services" data-i18n="nav_services">خزمەتگوزارییەکان</a>
+      <a href="#about" data-i18n="nav_about">دەربارە</a>
+      <a href="#contact" data-i18n="nav_contact">پەیوەندی</a>
+    </div>
+
+    <div class="foot-col">
+      <h5 data-i18n="foot_serv">خزمەتگوزارییەکان</h5>
+      <a href="#services" data-i18n="serv1_t">فرۆشتنی ئۆتۆمبێل</a>
+      <a href="#services" data-i18n="serv2_t">چاککردنەوەی نایاب</a>
+      <a href="#services" data-i18n="serv3_t">خاوێنکردنەوە و پاراستن</a>
+      <a href="#services" data-i18n="serv4_t">دارایی و قیست</a>
+    </div>
+
+    <div class="foot-col">
+      <h5 data-i18n="foot_contact">پەیوەندی</h5>
+      <a href="tel:+9647504476599" dir="ltr">0750 447 6599</a>
+      <a href="tel:+9647502021100" dir="ltr">0750 202 1100</a>
+      <span data-i18n="info_addr_v">سۆران، هەولێر، هەرێمی کوردستان، عێراق</span>
+    </div>
+  </div>
+
+  <div class="foot-bottom">
+    <span data-i18n="foot_rights">© 2026 مۆناکۆ کارز. هەموو مافەکان پارێزراون.</span>
+    <span class="foot-made" data-i18n="foot_made">دیزاینی نمایشی — Demo</span>
+  </div>
+</footer>
+
+<!-- ============ WHATSAPP FLOAT ============ -->
+<a href="https://wa.me/9647504476599" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8L7 20.5A10 10 0 1 0 12 2zm5.5 12.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2s-.8.9-.9 1.1c-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.6-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5s-.7-1.7-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.4z"/></svg>
+</a>
+
+<!-- ============ MOBILE DRAWER ============ -->
+<div class="drawer" id="drawer" hidden>
+  <div class="drawer-panel">
+    <button class="drawer-close" id="drawerClose" aria-label="Close">&times;</button>
+    <nav class="drawer-links">
+      <a href="#home" data-i18n="nav_home">ماڵەوە</a>
+      <a href="#cars" data-i18n="nav_cars">ئۆتۆمبێلەکان</a>
+      <a href="#services" data-i18n="nav_services">خزمەتگوزارییەکان</a>
+      <a href="#about" data-i18n="nav_about">دەربارە</a>
+      <a href="#contact" data-i18n="nav_contact">پەیوەندی</a>
+    </nav>
+    <div class="drawer-lang" id="drawerLang">
+      <button data-lang="ckb" class="active">کوردی</button>
+      <button data-lang="ar">عربي</button>
+      <button data-lang="en">EN</button>
+    </div>
+    <button class="btn-login full" id="drawerLogin" data-i18n="login">چوونەژوورەوە</button>
+  </div>
+</div>
+
+<!-- ============ ACCOUNT MODAL ============ -->
+<div class="modal" id="accountModal" hidden>
+  <div class="modal-card">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <div class="modal-brand">
+      <img src="https://raw.githubusercontent.com/hama-tech2/monaco-cars-erbil/main/monack%20logo.jpg" alt="Monaco Cars">
+    </div>
+    <div class="modal-tabs" id="modalTabs">
+      <button class="active" data-tab="login" data-i18n="m_login">چوونەژوورەوە</button>
+      <button data-tab="signup" data-i18n="m_signup">دروستکردنی هەژمار</button>
+    </div>
+
+    <form class="modal-form" id="authForm" autocomplete="off">
+      <label class="field signup-only" hidden>
+        <span data-i18n="m_name">ناو</span>
+        <input type="text" name="name" placeholder="ناوی تەواو">
+      </label>
+      <label class="field">
+        <span data-i18n="m_email">ئیمەیڵ</span>
+        <input type="email" name="email" placeholder="name@email.com" dir="ltr">
+      </label>
+      <label class="field">
+        <span data-i18n="m_pass">وشەی نهێنی</span>
+        <input type="password" name="password" placeholder="••••••••" dir="ltr">
+      </label>
+      <button type="submit" class="btn-primary full" id="authSubmit" data-i18n="m_login">چوونەژوورەوە</button>
+    </form>
+
+    <div class="modal-or"><span data-i18n="m_or">یان</span></div>
+
+    <button class="btn-google" id="googleBtn">
+      <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.5 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.9a5 5 0 0 1-2.2 3.3v2.7h3.6c2.1-2 3.2-4.9 3.2-7.9z"/><path fill="#34A853" d="M12 23c2.9 0 5.4-1 7.2-2.6l-3.6-2.7c-1 .7-2.3 1.1-3.6 1.1-2.8 0-5.1-1.9-6-4.4H2.3v2.8A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M6 14.4a6.6 6.6 0 0 1 0-4.2V7.4H2.3a11 11 0 0 0 0 9.8z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3 .5 4.1 1.6l3.1-3.1A11 11 0 0 0 2.3 7.4L6 10.2C6.9 7.7 9.2 5.4 12 5.4z"/></svg>
+      <span data-i18n="m_google">بەردەوامبوون بە گووگڵ</span>
+    </button>
+
+    <p class="modal-note" data-i18n="m_note">ئەمە نمایشە — هیچ داتایەک هەڵناگیرێت.</p>
+  </div>
+</div>
+
+<!-- ============ NOTIFICATION PANEL ============ -->
+<div class="notif-panel" id="notifPanel" hidden>
+  <div class="notif-head">
+    <strong data-i18n="notif_title">ئاگادارییەکان</strong>
+    <button id="notifClear" data-i18n="notif_clear">پاککردنەوە</button>
+  </div>
+  <ul class="notif-list" id="notifList">
+    <li class="unread"><span class="nd"></span><div><b data-i18n="notif1_t">ئۆتۆمبێلی نوێ زیادکرا</b><small data-i18n="notif1_d">Land Cruiser 300 GR-S ئێستا بەردەستە.</small></div></li>
+    <li class="unread"><span class="nd"></span><div><b data-i18n="notif2_t">داشکاندنی تایبەت</b><small data-i18n="notif2_d">بۆ ماوەیەکی سنووردار لەسەر Camry 2025.</small></div></li>
+    <li class="unread"><span class="nd"></span><div><b data-i18n="notif3_t">بەخێربێیت بۆ مۆناکۆ</b><small data-i18n="notif3_d">سوپاس بۆ سەردانت — یارمەتیت دەدەین.</small></div></li>
+  </ul>
+</div>
+
+<!-- ============ TOASTS ============ -->
+<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
